@@ -145,7 +145,7 @@ async function fetchJSON(url) {
 }
 */
 function Login() {
-    /*
+
     useEffect(async () => {
         const { authorization_endpoint } = await fetchJSON(
             "https://accounts.google.com/.well-known/openid-configuration"
@@ -162,7 +162,7 @@ function Login() {
         window.location.href =
             authorization_endpoint + "?" + new URLSearchParams(parameters);
     }, []);
-*/
+
     return (
         <div>
             <h1>Please wait....</h1>
