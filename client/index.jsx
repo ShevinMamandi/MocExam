@@ -172,7 +172,7 @@ function Login() {
 
 
 function LoginCallback() {
-    /*
+
     const navigate = useNavigate();
     useEffect(async () => {
         const { access_token } = Object.fromEntries(
@@ -188,7 +188,7 @@ function LoginCallback() {
             body: JSON.stringify({ access_token }),
         });
         navigate("/manageMovies");
-    });*/
+    });
 
     return <h1>Please wait...</h1>;
 }
