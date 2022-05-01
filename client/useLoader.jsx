@@ -17,6 +17,5 @@ export function useLoader(loadingFunction) {
     }
 
     useEffect(() => load(), []);
-
     return { loading, error, data };
 }
