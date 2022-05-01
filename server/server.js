@@ -1,18 +1,28 @@
 import express from "express";
 import * as path from "path";
 import { MoviesApi } from "./moviesApi.js";
-import { MongoClient } from "mongodb";
+import bodyParser from "body-parser";
 import dotenv from "dotenv";
+import { MongoClient } from "mongodb";
 
 dotenv.config();
 
 const app = express();
 
-const mongoClient = new MongoClient(process.env.MONGODB_URL);
-mongoClient.connect().then(async () => {
-    console.log("Connected to mongodb");
-    app.use("/api/movies", MoviesApi(mongoClient.db("movie-db")));
-});
+app.use(bodyParser.json());
+
+const mongodburl = process.env.MONGODB_URL;
+if (mongodburl) {
+    const client = new MongoClient(mongodburl);
+    client
+        .connect()
+        .then((conn) =>
+            app.use(
+                "/api/movies",
+                MoviesApi(conn.db(process.env.MONGODB_DATABASE || "movie-reference"))
+            )
+        );
+}
 
 app.use(express.static("../client/dist/"));
 
