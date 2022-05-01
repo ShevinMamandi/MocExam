@@ -134,7 +134,7 @@ function Movies() {
         </Routes>
     );
 }
-/*
+
 async function fetchJSON(url) {
     const res = await fetch(url);
     if (!res.ok) {
@@ -143,7 +143,7 @@ async function fetchJSON(url) {
     return await res.json();
 
 }
-*/
+
 function Login() {
 
     useEffect(async () => {
