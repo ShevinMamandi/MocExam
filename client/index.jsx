@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {/*useEffect,*/ useState} from "react";
 import ReactDOM from "react-dom";
 import {
     BrowserRouter,
@@ -134,16 +134,18 @@ function Movies() {
         </Routes>
     );
 }
-
+/*
 async function fetchJSON(url) {
     const res = await fetch(url);
     if (!res.ok) {
         throw new Error(`Failed ${res.status}`);
     }
     return await res.json();
-}
 
+}
+*/
 function Login() {
+    /*
     useEffect(async () => {
         const { authorization_endpoint } = await fetchJSON(
             "https://accounts.google.com/.well-known/openid-configuration"
@@ -160,7 +162,7 @@ function Login() {
         window.location.href =
             authorization_endpoint + "?" + new URLSearchParams(parameters);
     }, []);
-
+*/
     return (
         <div>
             <h1>Please wait....</h1>
@@ -170,6 +172,7 @@ function Login() {
 
 
 function LoginCallback() {
+    /*
     const navigate = useNavigate();
     useEffect(async () => {
         const { access_token } = Object.fromEntries(
@@ -185,7 +188,7 @@ function LoginCallback() {
             body: JSON.stringify({ access_token }),
         });
         navigate("/manageMovies");
-    });
+    });*/
 
     return <h1>Please wait...</h1>;
 }
