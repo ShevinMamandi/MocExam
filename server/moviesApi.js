@@ -1,4 +1,6 @@
 import express from "express";
+
+const movies = [];
 export function MoviesApi(db) {
     const api = express.Router();
 
