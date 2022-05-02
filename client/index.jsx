@@ -24,6 +24,13 @@ function FrontPage() {
   );
 }
 
+function logout() {
+  console.log("Clicked");
+  localStorage.clear();
+  // you can also like localStorage.removeItem('Token');
+  window.location.href = "/";
+}
+
 function ManageMovies() {
   const { loading, data, error } = useLoader(async () => {
     return await fetchJSONData("/api/login");
@@ -37,6 +44,9 @@ function ManageMovies() {
 
   return (
     <div>
+      <div>
+        <button onClick={logout}>Logout</button>
+      </div>
       <div>Profile for: {data.name}</div>
       <br />
       <h1>Movie Database</h1>
@@ -81,6 +91,9 @@ function ListMovies() {
 
   return (
     <div>
+      <div>
+        <button onClick={logout}>Logout</button>
+      </div>
       <h1>List movies</h1>
       {data.map((movie) => (
         <MovieCard key={movie.title} movie={movie} />
@@ -109,6 +122,9 @@ function AddMovie() {
 
   return (
     <form onSubmit={handleSubmit}>
+      <div>
+        <button onClick={logout}>Logout</button>
+      </div>
       <h1>Add Movie</h1>
       <div>
         Title:
