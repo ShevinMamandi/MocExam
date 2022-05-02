@@ -23,12 +23,13 @@ async function fetchJSON(url, options) {
 }
 const discovery_endpoint =
   "https://accounts.google.com/.well-known/openid-configuration";
+const client_id = process.env.CLIENT_ID;
 app.get("/api/config", (req, res) => {
   res.json({
     response_type: "token",
-    client_id:
-      "937896651150-boiuk03ppguqobl7v37rjulofn6tejve.apps.googleusercontent.com",
+    client_id,
     discovery_endpoint,
+    scope: "email profile",
   });
 });
 
