@@ -7,7 +7,7 @@
   "scripts": {
     "build": "npm install",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server.js",
+    "dev": " cpy ../client/dist ./ && nodemon server.js",
     "start": "node server.js"
   },
   "keywords": [],
