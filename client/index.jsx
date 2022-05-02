@@ -26,7 +26,7 @@ function FrontPage() {
 
 function ManageMovies() {
     const {loading, data, error} = useLoader(async () => {
-        return await fetchJSON("/api/login");
+        return await fetchJSONData("/api/login");
     })
     if(loading){
         return <div>Please wait...</div>;
@@ -63,7 +63,7 @@ function MovieCard({ movie: { title, plot, year } }) {
 
 function ListMovies() {
     const { loading, error, data } = useLoader(async () => {
-        return fetchJSON("/api/movies");
+        return fetchJSONData("/api/movies");
     });
 
     if (loading) {
@@ -134,20 +134,21 @@ function Movies() {
         </Routes>
     );
 }
-/*
-async function fetchJSON(url) {
+
+
+async function fetchJSONData(url) {
     const res = await fetch(url);
     if (!res.ok) {
         throw new Error(`Failed ${res.status}`);
     }
     return await res.json();
 
-}*/
+}
 
 function Login() {
 
     useEffect(async () => {
-        const { authorization_endpoint } = await fetchJSON(
+        const { authorization_endpoint } = await fetchJSONData(
             "https://accounts.google.com/.well-known/openid-configuration"
         );
 
