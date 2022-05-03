@@ -1,12 +1,9 @@
 import { useLoader } from "../useLoader";
-import { fetchJSONData } from "../http";
 import { logout } from "../logout";
 import React from "react";
 
-export function ListMovies() {
-  const { loading, error, data } = useLoader(async () => {
-    return fetchJSONData("/api/movies");
-  });
+export function ListMovies({ listMovies }) {
+  const { loading, error, data } = useLoader(listMovies);
 
   if (loading) {
     return <div>Loading.... </div>;
@@ -15,7 +12,7 @@ export function ListMovies() {
     return (
       <div>
         <h1>Error</h1>
-        <div>{error.toString()}</div>
+        <div id="error-text">{error.toString()}</div>
       </div>
     );
   }

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { fetchJSON } from "../http";
 import { logout } from "../logout";
 
@@ -7,7 +6,6 @@ export function AddMovie() {
   const [title, setTitle] = useState("");
   const [plot, setPlot] = useState("");
   const [year, setYear] = useState("");
-  const navigate = useNavigate();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -18,7 +16,8 @@ export function AddMovie() {
     setTitle("");
     setYear("");
     setPlot("");
-    navigate("/movies/list");
+    //navigate("/movies/list");
+    window.location.href = "/movies/list";
   }
 
   return (
