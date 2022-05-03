@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListMovies component show error message 1`] = `
+<div>
+  <div>
+    <h1>
+      Error
+    </h1>
+    <div
+      id="error-text"
+    >
+      Error: Something went wrong
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ListMovies component show loading screen 1`] = `
+<div>
+  <div>
+    Loading.... 
+  </div>
+</div>
+`;
+
+exports[`ListMovies component show movies 1`] = `
+<div>
+  <div>
+    <div>
+      <button>
+        Logout
+      </button>
+    </div>
+    <h1>
+      List movies
+    </h1>
+    <h3>
+      movie 1
+    </h3>
+    <h4 />
+    <div />
+    <h3>
+      movie 2
+    </h3>
+    <h4 />
+    <div />
+  </div>
+</div>
+`;
